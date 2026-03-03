@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zherani — Expense Tracker</title>
+    <link rel="icon" type="image/x-icon" href="imgs/logo.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <meta name="description" content="Zherani helps you track expenses, incomes, accounts, budgets, categories and insights across workspaces with multi-currency support.">
+    <meta name="keywords" content="expense tracker, budget planner, income tracking, multi-currency, accounts, categories, workspace sharing">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Zherani — Expense Tracker">
+    <meta property="og:description" content="Track expenses and incomes, plan monthly budgets, manage accounts, and get insights.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="imgs/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zherani — Expense Tracker">
+    <meta name="twitter:description" content="Track expenses and incomes, plan monthly budgets, manage accounts, and get insights.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Zherani",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Android, iOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Expenses & income tracker with categories, accounts, budgets, insights, multi-currency and workspace sharing."
+    }
+    </script>
+    <style>
+        :root {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --brand: oklch(72.3% .138 181.071);
+        }
+        .brand-bg { background-color: var(--brand); }
+        .brand-border { border-color: var(--brand); }
+        .brand-text { color: var(--brand); }
+        .brand-btn { background-color: var(--brand); color: #fff; }
+        .brand-btn:hover { opacity: .85; }
+
+        body,
+        html {
+            scroll-behavior: smooth !important;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+    <header>
+      <div class="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <!-- Logo -->
+          <a href="/app.html" class="flex items-center gap-3 shrink-0">
+            <img src="imgs/logo.png" alt="Zherani Logo" class="h-10 w-auto sm:h-12">
+            <span class="text-xl font-bold">Zherani</span>
+          </a>
+
+          <!-- Buttons – wrap on small screens, smaller padding -->
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+            <a href="#"
+               class="inline-flex items-center gap-1.5 sm:gap-2 brand-btn rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 text-sm sm:text-base">
+              <i class="bi bi-apple text-base sm:text-lg"></i>
+              <span class="hidden xs:inline">App Store</span>
+            </a>
+
+            <a href="#"
+               class="inline-flex items-center gap-1.5 sm:gap-2 brand-btn rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 text-sm sm:text-base">
+              <i class="bi bi-google-play text-base sm:text-lg"></i>
+              <span class="hidden xs:inline">Play Store</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="hero" class="overflow-x-hidden">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-lg py-10 pb-20">
+            <div class="flex flex-col md:flex-row items-center gap-20">
+                <div style="min-width:300px;" data-aos="fade-right" data-aos-delay="50">
+                    <img class="w-full max-w-[300px]" src="./imgs/iphone-mockup.png" alt="">
+                </div>
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <h1 class="text-2xl font-bold lg:text-5xl pb-8">
+                        <span>Zherani</span><br>
+                        Expense & Income Tracker, built for clarity
+                    </h1>
+                    <p class="text-xl pb-8">
+                        Track expenses and incomes, manage accounts and categories, plan monthly budgets, explore insights, and share workspaces — with multi-currency support.
+                    </p>
+                    <!-- ← New emphasis here – friendlier & user-focused -->
+                    <p class="text-lg pb-10 font-medium text-gray-800">
+                      Get started in seconds — <span class="brand-text underline decoration-2">try it for FREE</span>,
+                      no credit card needed.
+                    </p>
+                    <div class="flex gap-3 mb-8">
+                        <a href="#" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
+                            <i class="bi bi-apple text-lg"></i><span>App Store</span>
+                        </a>
+                        <a href="#" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
+                            <i class="bi bi-google-play text-lg"></i><span>Play Store</span>
+                        </a>
+                    </div>
+                    <div class="bg-gray-100 p-5 rounded max-w-[292px] flex gap-2 items-center text-center">
+                        <div class="flex item-center">
+                            <svg class="w-5 h-5 text-gray-900 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+
+                            <svg class="w-5 h-5 text-gray-900 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+
+                            <svg class="w-5 h-5 text-gray-900 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+
+                            <svg class="w-5 h-5 text-gray-900 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+
+                            <svg class="w-5 h-5 text-gray-900 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+                        </div>
+                        <span class="text-dark text-xs">4.9/5 (275k Reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="why" class="bg-[#f1f1f1]">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-20">
+            <h2 class="text-3xl font-bold lg:text-6xl pb-8">
+                Why use <span class="brand-text">Zherani</span> ?
+            </h2>
+            <p class="mb-16 text-2xl">
+                Designed for clarity and speed: add expenses and incomes, set monthly budgets per category, and see account-level insights instantly.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-16 lg:gap-x-24 gap-y-20">
+                <div data-aos="fade-up">
+                    <div class="flex items-center justify-center w-12 h-12 mb-4 text-white brand-bg rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-7 h-7"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-lg sm:text-xl font-semibold leading-tight text-gray-900">Expense Tracking</h3>
+                    <p class="text-base text-gray-600">Add expenses with category, date, notes, amount and account selection.</p>
+                </div>
+                <div data-aos="fade-up">
+                    <div class="flex items-center justify-center w-12 h-12 mb-4 text-white brand-bg rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-7 h-7"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-lg sm:text-xl font-semibold leading-tight text-gray-900">Income Tracking</h3>
+                    <p class="text-base text-gray-600">Record incomes with date, notes, amount and account selection.</p>
+                </div>
+                <div data-aos="fade-up">
+                    <div class="flex items-center justify-center w-12 h-12 mb-4 text-white brand-bg rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-7 h-7"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-lg sm:text-xl font-semibold leading-tight text-gray-900">Monthly Budgets</h3>
+                    <p class="text-base text-gray-600">Set budgets per category and track progress with visual indicators.</p>
+                </div>
+                <div data-aos="fade-up">
+                    <div class="flex items-center justify-center w-12 h-12 mb-4 text-white brand-bg rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-7 h-7"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z"
+                                clip-rule="evenodd" />
+                            <path fill-rule="evenodd"
+                                d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z"
+                                clip-rule="evenodd" />
+                            <path fill-rule="evenodd"
+                                d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-lg sm:text-xl font-semibold leading-tight text-gray-900">Account Insights</h3>
+                    <p class="text-base text-gray-600">See income, expense and net balance by account at a glance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="features">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-20">
+            <div class="flex flex-col md:flex-row gap-10 items-center">
+                <div class="w-full max-w-[200px]">
+                    <img class="w-full max-w-[200px]" src="./imgs/4.Globe.png" alt="">
+                </div>
+                <div class="grid gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold lg:text-6xl pb-8">
+                            <span>Key</span> Features
+                        </h2>
+                        <p class="mt-3">
+                            Built for productively managing personal finance: categories for expenses and income, accounts per workspace, powerful search and filters, and multi-currency support (IDR, USD, EUR, JPY).
+                        </p>
+                    </div>
+                    <div class="space-y-6 lg:space-y-10">
+                        <div class="flex">
+                            <svg class="flex-shrink-0 mt-2 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+                                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
+                                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
+                                <path d="M10 6h4" />
+                                <path d="M10 10h4" />
+                                <path d="M10 14h4" />
+                                <path d="M10 18h4" /></svg>
+                            <div class="ms-5 sm:ms-8">
+                                <h3 class="text-lg sm:text-xl font-semibold">
+                                    Workspace Management & Sharing
+                                </h3>
+                                <p class="mt-1">
+                                    Create multiple workspaces, set default categories, accounts, currency and quick amounts. Share via email or links.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <svg class="flex-shrink-0 mt-2 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                            <div class="ms-5 sm:ms-8">
+                                <h3 class="text-lg sm:text-xl font-semibold">
+                                    Category & Template System
+                                </h3>
+                                <p class="mt-1">
+                                    Organize entries with income/expense types. Use quick templates and preset amounts for recurring items.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <svg class="flex-shrink-0 mt-2 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 10v12" />
+                                <path
+                                    d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z" />
+                            </svg>
+                            <div class="ms-5 sm:ms-8">
+                                <h3 class="text-lg sm:text-xl font-semibold">
+                                    Insights, Calendar & Search
+                                </h3>
+                                <p class="mt-1">
+                                    Calendar view, monthly totals, detailed date views and powerful search/filter by notes, category and date range.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <svg class="flex-shrink-0 mt-2 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 8v8" />
+                                <path d="M8 12h8" />
+                                <circle cx="12" cy="12" r="10" /></svg>
+                            <div class="ms-5 sm:ms-8">
+                                <h3 class="text-lg sm:text-xl font-semibold">
+                                    Multi-Currency & Accounts
+                                </h3>
+                                <p class="mt-1">
+                                    Use IDR, USD, EUR or JPY per workspace. Track money sources with account-level insights.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <svg class="flex-shrink-0 mt-2 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 7h18" />
+                                <path d="M3 12h18" />
+                                <path d="M3 17h18" /></svg>
+                            <div class="ms-5 sm:ms-8">
+                                <h3 class="text-lg sm:text-xl font-semibold">
+                                    Templates, Quick Amounts & Batch Setup
+                                </h3>
+                                <p class="mt-1">
+                                    Create quick templates, preset amounts, and set up a workspace in one step with defaults.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="FAQ" class="bg-[#f1f1f1]">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-20">
+            <div class="flex items-center">
+                <h2 class="text-2xl font-bold lg:text-5xl pb-8"><span class="brand-text">Frequently</span> Asked Questions
+            </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div class="space-y-4">
+                <details class="group bg-white rounded-lg shadow p-4" data-aos="fade-up">
+                    <summary class="flex justify-between items-center cursor-pointer">
+                        <span class="font-semibold text-gray-900">What is Zherani?</span>
+                        <i class="bi bi-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="mt-3 text-gray-700">
+                        Zherani is an expenses & income tracker that lets you record entries with categories, accounts, dates and notes, plan monthly budgets and explore insights across workspaces.
+                    </div>
+                </details>
+                <details class="group bg-white rounded-lg shadow p-4" data-aos="fade-up">
+                    <summary class="flex justify-between items-center cursor-pointer">
+                        <span class="font-semibold text-gray-900">Does Zherani support multiple currencies?</span>
+                        <i class="bi bi-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="mt-3 text-gray-700">
+                        Yes. Workspaces can use IDR, USD, EUR or JPY with consistent calculations.
+                    </div>
+                </details>
+                <details class="group bg-white rounded-lg shadow p-4" data-aos="fade-up">
+                    <summary class="flex justify-between items-center cursor-pointer">
+                        <span class="font-semibold text-gray-900">Can I share a workspace?</span>
+                        <i class="bi bi-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="mt-3 text-gray-700">
+                        Yes. Share with email invitations or shareable links to collaborate.
+                    </div>
+                </details>
+                <details class="group bg-white rounded-lg shadow p-4" data-aos="fade-up">
+                    <summary class="flex justify-between items-center cursor-pointer">
+                        <span class="font-semibold text-gray-900">Is there a calendar and search?</span>
+                        <i class="bi bi-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="mt-3 text-gray-700">
+                        Zherani includes a calendar with monthly totals, detailed date views and powerful search and filters.
+                    </div>
+                </details>
+                <details class="group bg-white rounded-lg shadow p-4" data-aos="fade-up">
+                    <summary class="flex justify-between items-center cursor-pointer">
+                        <span class="font-semibold text-gray-900">Is there authentication?</span>
+                        <i class="bi bi-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="mt-3 text-gray-700">
+                        Yes. Signup, login, password change and profile management are supported.
+                    </div>
+                </details>
+                    <details class="group bg-white rounded-lg shadow p-4" data-aos="fade-up">
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <span class="font-semibold text-gray-900">Can I set budgets and templates?</span>
+                            <i class="bi bi-chevron-down transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            Yes. Set monthly budgets per category with progress indicators. Create templates and quick amounts for recurring entries.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-lg shadow p-4" data-aos="fade-up">
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <span class="font-semibold text-gray-900">How is my data handled?</span>
+                            <i class="bi bi-chevron-down transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            Workspaces are isolated. You control sharing via invitations or links. Export options will be available for your records.
+                        </div>
+                    </details>
+                </div>
+                <div class="flex justify-center">
+                    <img src="./imgs/iphone-mockup.png" alt="Zherani App" class="max-w-[220px] md:max-w-[260px]">
+            </div>
+        </div>
+      </div>
+    </section>
+    <section id="testimonials">
+      <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-20">
+        <h2 class="text-2xl font-bold lg:text-5xl pb-12 text-center">
+          <span class="brand-text">What Our Users Say</span>
+        </h2>
+
+
+        <div class="swiper">
+          <div class="swiper-wrapper items-center flex flex-row">
+
+            <!-- 1 -->
+            <div class="swiper-slide">
+              <div class="bg-gradient-to-b w-72 h-64 flex flex-col justify-between shadow-lg mx-auto rounded-xl p-4 text-center" data-aos="fade-up">
+                <p class="text-gray-700">
+                  <span class="text-lg font-bold text-slate-800">“</span>
+                  Zherani makes budgeting feel simple and organized. The category budgets and quick templates save me so much time.
+                  <span class="text-lg font-bold text-slate-800">”</span>
+                </p>
+                <div class="flex flex-col items-center">
+                  <img alt="profile" src="https://i.pravatar.cc/100?img=11" class="object-cover rounded-full h-10 w-10">
+                  <div class="mt-2">
+                    <span class="text-sm font-semibold text-slate-800">Michael Carter</span>
+                    <span class="block text-xs text-gray-500">Small Business Owner</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="swiper-slide">
+              <div class="bg-gradient-to-b w-72 h-64 flex flex-col justify-between shadow-lg mx-auto rounded-xl p-4 text-center" data-aos="fade-up">
+                <p class="text-gray-700">
+                  <span class="text-lg font-bold text-slate-800">“</span>
+                  The account insights view helps me track balances across all my wallets in one place. Super helpful.
+                  <span class="text-lg font-bold text-slate-800">”</span>
+                </p>
+                <div class="flex flex-col items-center">
+                  <img alt="profile" src="https://i.pravatar.cc/100?img=12" class="object-cover rounded-full h-10 w-10">
+                  <div class="mt-2">
+                    <span class="text-sm font-semibold text-slate-800">Anathan Pham</span>
+                    <span class="block text-xs text-gray-500">Freelance Designer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="swiper-slide">
+              <div class="bg-gradient-to-b w-72 h-64 flex flex-col justify-between shadow-lg mx-auto rounded-xl p-4 text-center" data-aos="fade-up">
+                <p class="text-gray-700">
+                  <span class="text-lg font-bold text-slate-800">“</span>
+                  Multi-currency support is a lifesaver when I travel. I can manage everything without switching apps.
+                  <span class="text-lg font-bold text-slate-800">”</span>
+                </p>
+                <div class="flex flex-col items-center">
+                  <img alt="profile" src="https://i.pravatar.cc/100?img=13" class="object-cover rounded-full h-10 w-10">
+                  <div class="mt-2">
+                    <span class="text-sm font-semibold text-slate-800">Daniel Hoffman</span>
+                    <span class="block text-xs text-gray-500">Digital Nomad</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="swiper-slide">
+              <div class="bg-gradient-to-b w-72 h-64 flex flex-col justify-between shadow-lg mx-auto rounded-xl p-4 text-center" data-aos="fade-up">
+                <p class="text-gray-700">
+                  <span class="text-lg font-bold text-slate-800">“</span>
+                  The calendar and search features make it easy to find old transactions in seconds.
+                  <span class="text-lg font-bold text-slate-800">”</span>
+                </p>
+                <div class="flex flex-col items-center">
+                  <img alt="profile" src="https://i.pravatar.cc/100?img=14" class="object-cover rounded-full h-10 w-10">
+                  <div class="mt-2">
+                    <span class="text-sm font-semibold text-slate-800">Amer Al-Barkawi</span>
+                    <span class="block text-xs text-gray-500">Marketing Manager</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="swiper-slide">
+              <div class="bg-gradient-to-b w-72 h-64 flex flex-col justify-between shadow-lg mx-auto rounded-xl p-4 text-center" data-aos="fade-up">
+                <p class="text-gray-700">
+                  <span class="text-lg font-bold text-slate-800">“</span>
+                  Shared workspace keeps my partner and me aligned on our monthly budget goals.
+                  <span class="text-lg font-bold text-slate-800">”</span>
+                </p>
+                <div class="flex flex-col items-center">
+                  <img alt="profile" src="https://i.pravatar.cc/100?img=15" class="object-cover rounded-full h-10 w-10">
+                  <div class="mt-2">
+                    <span class="text-sm font-semibold text-slate-800">Ryan Thompson</span>
+                    <span class="block text-xs text-gray-500">Startup Founder</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="swiper-slide">
+              <div class="bg-gradient-to-b w-72 h-64 flex flex-col justify-between shadow-lg mx-auto rounded-xl p-4 text-center" data-aos="fade-up">
+                <p class="text-gray-700">
+                  <span class="text-lg font-bold text-slate-800">“</span>
+                  Templates and quick amounts make recurring bills effortless to log.
+                  <span class="text-lg font-bold text-slate-800">”</span>
+                </p>
+                <div class="flex flex-col items-center">
+                  <img alt="profile" src="https://i.pravatar.cc/100?img=16" class="object-cover rounded-full h-10 w-10">
+                  <div class="mt-2">
+                    <span class="text-sm font-semibold text-slate-800">Emily Watson</span>
+                    <span class="block text-xs text-gray-500">Accountant</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="swiper-slide">
+              <div class="bg-gradient-to-b w-72 h-64 flex flex-col justify-between shadow-lg mx-auto rounded-xl p-4 text-center" data-aos="fade-up">
+                <p class="text-gray-700">
+                  <span class="text-lg font-bold text-slate-800">“</span>
+                  Switching between workspaces is smooth and secure. Authentication feels seamless.
+                  <span class="text-lg font-bold text-slate-800">”</span>
+                </p>
+                <div class="flex flex-col items-center">
+                  <img alt="profile" src="https://i.pravatar.cc/100?img=17" class="object-cover rounded-full h-10 w-10">
+                  <div class="mt-2">
+                    <span class="text-sm font-semibold text-slate-800">Jonathan Reed</span>
+                    <span class="block text-xs text-gray-500">Software Engineer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="swiper-slide">
+              <div class="bg-gradient-to-b w-72 h-64 flex flex-col justify-between shadow-lg mx-auto rounded-xl p-4 text-center" data-aos="fade-up">
+                <p class="text-gray-700">
+                  <span class="text-lg font-bold text-slate-800">“</span>
+                  The clean interface and modern theme make it enjoyable to use every day.
+                  <span class="text-lg font-bold text-slate-800">”</span>
+                </p>
+                <div class="flex flex-col items-center">
+                  <img alt="profile" src="https://i.pravatar.cc/100?img=18" class="object-cover rounded-full h-10 w-10">
+                  <div class="mt-2">
+                    <span class="text-sm font-semibold text-slate-800">Jimmy Kim</span>
+                    <span class="block text-xs text-gray-500">Product Consultant</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <br><br><br>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#f1f1f1]">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-10">
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <nav class="flex gap-4 text-sm text-gray-700">
+                    <a href="#hero" class="brand-text hover:underline">Home</a>
+                    <a href="#why" class="brand-text hover:underline">Why Zherani</a>
+                    <a href="#features" class="brand-text hover:underline">Features</a>
+                    <a href="#FAQ" class="brand-text hover:underline">FAQ</a>
+                    <a href="#testimonials" class="brand-text hover:underline">Testimonials</a>
+                </nav>
+                <p class="md:ml-auto text-sm text-center text-gray-700">© Copyright <span id="year"></span> Zherani. All Rights Reserved.</p>
+                <div class="md:ml-auto flex gap-3">
+                    <a href="#" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
+                        <i class="bi bi-apple text-lg"></i><span>App Store</span>
+                    </a>
+                    <a href="#" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
+                        <i class="bi bi-google-play text-lg"></i><span>Play Store</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 5000
+            },
+            freeMode: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                1320: {
+                    slidesPerView: 4
+                },
+                1000: {
+                    slidesPerView: 3
+                },
+                700: {
+                    slidesPerView: 2
+                },
+                100: {
+                    slidesPerView: 1
+                }
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
