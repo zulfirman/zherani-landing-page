@@ -67,16 +67,15 @@
 
           <!-- Buttons – wrap on small screens, smaller padding -->
           <div class="flex flex-wrap items-center gap-2 sm:gap-3">
-            <a href="#"
+            <a href="https://play.google.com/store/apps/details?id=com.airshade.zherani" target="_blank" rel="noopener noreferrer"
                class="inline-flex items-center gap-1.5 sm:gap-2 brand-btn rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 text-sm sm:text-base">
               <i class="bi bi-google-play text-base sm:text-lg"></i>
               <span class="hidden xs:inline">Play Store</span>
             </a>
 
-            <a href="#"
-               class="inline-flex items-center gap-1.5 sm:gap-2 brand-btn rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 text-sm sm:text-base">
-              <i class="bi bi-apple text-base sm:text-lg"></i>
-              <span class="hidden xs:inline">App Store</span>
+            <a href="#" class="hidden"
+               aria-hidden="true" tabindex="-1">
+              <span>App Store</span>
             </a>
 
             <a href="https://app.zherani.my.id" target="_blank" rel="noopener noreferrer"
@@ -90,9 +89,9 @@
     </header>
     <section id="hero" class="overflow-x-hidden">
         <div class="mx-auto sm:px-7 px-4 max-w-screen-lg py-10 pb-20">
-            <div class="flex flex-col md:flex-row items-center gap-20">
-                <div style="min-width:300px;" data-aos="fade-right" data-aos-delay="50">
-                    <img class="w-full max-w-[300px]" src="./imgs/iphone-mockup.png" alt="">
+            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16 lg:gap-20">
+                <div class="w-full flex justify-center md:justify-start md:w-auto shrink-0" data-aos="fade-right" data-aos-delay="50">
+                    <img class="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[340px] h-auto object-contain" src="./imgs/device-pic-1.webp" alt="Zherani expense tracker on a device" fetchpriority="high" decoding="async">
                 </div>
                 <div data-aos="fade-left" data-aos-delay="200">
                     <h1 class="text-2xl font-bold lg:text-5xl pb-8">
@@ -108,12 +107,10 @@
                       no credit card needed.
                     </p>
                     <div class="flex flex-wrap gap-3 mb-8">
-                        <a href="#" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
+                        <a href="https://play.google.com/store/apps/details?id=com.airshade.zherani" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
                             <i class="bi bi-google-play text-lg"></i><span>Play Store</span>
                         </a>
-                        <a href="#" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
-                          <i class="bi bi-apple text-lg"></i><span>App Store</span>
-                        </a>
+                        <a href="#" class="hidden" aria-hidden="true" tabindex="-1"><span>App Store</span></a>
                         <a href="https://app.zherani.my.id" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
                             <i class="bi bi-globe2 text-lg"></i><span>Browser</span>
                         </a>
@@ -399,8 +396,8 @@
                         </div>
                     </details>
                 </div>
-                <div class="flex justify-center">
-                    <img src="./imgs/iphone-mockup.png" alt="Zherani App" class="max-w-[220px] md:max-w-[260px]">
+                <div class="flex justify-center md:justify-end lg:justify-center items-start">
+                    <img src="./imgs/device-pic-2.webp" alt="Zherani app on a device" class="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[420px] h-auto object-contain" loading="lazy" decoding="async">
             </div>
         </div>
       </div>
@@ -579,10 +576,8 @@
                 </nav>
                 <p class="md:ml-auto text-sm text-center text-gray-700">© Copyright <span id="year"></span> Zherani. All Rights Reserved.</p>
                 <div class="md:ml-auto flex flex-wrap gap-3">
-                    <a href="#" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
-                        <i class="bi bi-apple text-lg"></i><span>App Store</span>
-                    </a>
-                    <a href="#" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
+                    <a href="#" class="hidden" aria-hidden="true" tabindex="-1"><span>App Store</span></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.airshade.zherani" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
                         <i class="bi bi-google-play text-lg"></i><span>Play Store</span>
                     </a>
                     <a href="https://app.zherani.my.id" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 brand-btn rounded-lg duration-300 transition-colors border border-transparent px-4 py-2.5">
