@@ -615,12 +615,8 @@
             if (!window.location.pathname.startsWith(deepLinkPrefix)) return;
 
             const fallback = document.getElementById("deep-link-fallback");
-            const openAppBtn = document.getElementById("deep-link-open-app");
             const continueWebBtn = document.getElementById("deep-link-continue-web");
-            if (!fallback || !openAppBtn || !continueWebBtn) return;
-
-            const currentUrl = window.location.href;
-            openAppBtn.href = currentUrl;
+            if (!fallback || !continueWebBtn) return;
 
             // Give Universal/App Links a moment to open the app before showing fallback UI.
             const fallbackTimer = window.setTimeout(() => {
