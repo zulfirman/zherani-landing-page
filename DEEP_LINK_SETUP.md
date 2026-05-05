@@ -59,14 +59,18 @@ Run:
 
 `curl -v https://app-site-association.cdn-apple.com/a/v1/zherani.my.id`
 
-## 5) Vercel routing (avoid 404 on app links)
+## 5) Share link page (no rewrites)
 
-This project includes a `vercel.json` rewrite:
+This project now uses a dedicated static page:
 
-- `/app/:path*` -> `/index.html`
+- `https://zherani.my.id/app/workspaces/join/`
 
-This prevents `404` for deep-link URLs like:
+Use this format for invite links:
 
-- `https://zherani.my.id/app/workspaces/join/<token>`
+- `https://zherani.my.id/app/workspaces/join/?token=<workspaceToken>`
 
-After pushing changes, redeploy on Vercel so the rewrite is active.
+Example:
+
+- `https://zherani.my.id/app/workspaces/join/?token=BbVYkGFQkpbSdBVBWNJt9CMlnWwFtZym`
+
+This approach improves social link previews (WhatsApp, Instagram, etc.) and works on Vercel without rewrites.

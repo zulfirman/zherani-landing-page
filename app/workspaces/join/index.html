@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join My Zherani Workspace</title>
+  <meta name="description" content="You are invited to join a workspace in Zherani. Open this invite in the app to collaborate on expenses, budgets, and shared financial insights.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/x-icon" href="/imgs/logo.ico">
+  <link rel="canonical" href="https://zherani.my.id/app/workspaces/join/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zherani">
+  <meta property="og:url" content="https://zherani.my.id/app/workspaces/join/">
+  <meta property="og:title" content="You’re Invited to Join a Zherani Workspace">
+  <meta property="og:description" content="Tap to open Zherani and join this workspace invite. Track expenses, budgets, and shared finance data together.">
+  <meta property="og:image" content="https://zherani.my.id/imgs/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="You’re Invited to Join a Zherani Workspace">
+  <meta name="twitter:description" content="Open this invite in Zherani to join a shared workspace for expense tracking and budgeting.">
+  <meta name="twitter:image" content="https://zherani.my.id/imgs/logo.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --brand: oklch(72.3% .138 181.071);
+    }
+    .brand-btn {
+      background-color: var(--brand);
+      color: #fff;
+    }
+    .brand-btn:hover {
+      opacity: .9;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-900">
+  <main class="mx-auto flex min-h-screen max-w-xl items-center px-4 py-10">
+    <section class="w-full rounded-2xl bg-white p-6 shadow-lg sm:p-8">
+      <div class="flex items-center gap-3">
+        <img src="/imgs/logo.png" alt="Zherani logo" class="h-10 w-10 rounded-lg object-cover">
+        <div>
+          <p class="text-sm text-gray-500">Workspace Invitation</p>
+          <h1 class="text-xl font-bold sm:text-2xl">Join on Zherani</h1>
+        </div>
+      </div>
+
+      <p class="mt-4 text-gray-700">
+        Open this invite with the Zherani app to join the shared workspace and collaborate on expense tracking and budgets.
+      </p>
+
+      <div class="mt-6 space-y-3">
+        <a id="open-in-app" href="#" class="brand-btn inline-flex w-full items-center justify-center rounded-lg px-4 py-3 font-semibold">
+          Open in Zherani App
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.airshade.zherani" target="_blank" rel="noopener noreferrer" class="inline-flex w-full items-center justify-center rounded-lg border border-gray-300 px-4 py-3 font-semibold text-gray-800">
+          Install on Android
+        </a>
+        <a id="use-web-version" href="https://app.zherani.my.id/app/workspaces/join/" class="inline-flex w-full items-center justify-center rounded-lg border border-gray-300 px-4 py-3 font-semibold text-gray-800">
+          Use Web Version
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const openInApp = document.getElementById("open-in-app");
+      if (!openInApp) return;
+
+      const current = new URL(window.location.href);
+      const token = current.searchParams.get("token");
+      const useWebVersion = document.getElementById("use-web-version");
+
+      // Stable link shape for sharing without rewrites:
+      // /app/workspaces/join/?token=<workspaceToken>
+      if (token) {
+        openInApp.href = "https://zherani.my.id/app/workspaces/join/?token=" + encodeURIComponent(token);
+        if (useWebVersion) {
+          useWebVersion.href = "https://app.zherani.my.id/app/workspaces/join/?token=" + encodeURIComponent(token);
+        }
+      } else {
+        openInApp.href = current.toString();
+        if (useWebVersion) {
+          useWebVersion.href = "https://app.zherani.my.id/app/workspaces/join/";
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
