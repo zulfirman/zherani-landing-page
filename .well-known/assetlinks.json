@@ -7,7 +7,8 @@
       "namespace": "android_app",
       "package_name": "com.airshade.zherani",
       "sha256_cert_fingerprints": [
-        "5C:F9:02:B9:B3:44:D0:79:65:F6:4F:1E:86:A0:A4:04:80:35:0C:74:A4:0B:02:E9:57:0B:BE:C7:52:6C:7D:45"
+        "5C:F9:02:B9:B3:44:D0:79:65:F6:4F:1E:86:A0:A4:04:80:35:0C:74:A4:0B:02:E9:57:0B:BE:C7:52:6C:7D:45",
+        "F2:06:CC:42:F5:A0:22:A4:56:70:7D:37:72:AD:70:2A:39:B6:95:FC:99:2F:31:11:15:BC:A3:3B:9E:C9:5A:48"
       ]
     }
   }
