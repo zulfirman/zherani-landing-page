@@ -58,3 +58,15 @@ Open in browser:
 Run:
 
 `curl -v https://app-site-association.cdn-apple.com/a/v1/zherani.my.id`
+
+## 5) Vercel routing (avoid 404 on app links)
+
+This project includes a `vercel.json` rewrite:
+
+- `/app/:path*` -> `/index.html`
+
+This prevents `404` for deep-link URLs like:
+
+- `https://zherani.my.id/app/workspaces/join/<token>`
+
+After pushing changes, redeploy on Vercel so the rewrite is active.
