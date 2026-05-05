@@ -589,22 +589,28 @@
         </div>
     </footer>
 
-    <div id="deep-link-fallback" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 px-4" role="dialog" aria-modal="true" aria-labelledby="deep-link-fallback-title">
-        <div class="w-full max-w-md rounded-2xl bg-white p-6 text-center shadow-2xl">
+    <dialog id="deep-link-fallback" class="w-full max-w-md rounded-2xl p-0 backdrop:bg-black/70" aria-labelledby="deep-link-fallback-title">
+        <div class="w-full rounded-2xl bg-white p-6 text-center shadow-2xl">
             <h2 id="deep-link-fallback-title" class="text-2xl font-bold text-gray-900">Open in Zherani App</h2>
             <p class="mt-3 text-gray-700">
                 We tried opening the app. If it did not open automatically, use one of the options below.
             </p>
             <div class="mt-6 flex flex-col gap-3">
+                <a id="deep-link-open-app" href="#" class="inline-flex items-center justify-center gap-2 brand-btn rounded-lg px-4 py-3">
+                    <i class="bi bi-phone text-lg"></i><span>Open App</span>
+                </a>
                 <a href="https://play.google.com/store/apps/details?id=com.airshade.zherani" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-3 text-gray-800">
                     <i class="bi bi-google-play text-lg"></i><span>Install on Android</span>
                 </a>
-                <a href="https://app.zherani.my.id" target="_blank" rel="noopener noreferrer" id="deep-link-continue-web" class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-3 text-gray-800" type="button">
-                    <i class="bi bi-globe2 text-lg"></i><span>Continue on Web</span>
+                <a href="https://app.zherani.my.id" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-3 text-gray-800">
+                    <i class="bi bi-globe2 text-lg"></i><span>Use Browser App</span>
                 </a>
+                <button id="deep-link-continue-web" class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-3 text-gray-800" type="button">
+                    <i class="bi bi-x-circle text-lg"></i><span>Continue on This Page</span>
+                </button>
             </div>
         </div>
-    </div>
+    </dialog>
 
     <script>
         (function () {
@@ -621,14 +627,14 @@
 
             // Give Universal/App Links a moment to open the app before showing fallback UI.
             const fallbackTimer = window.setTimeout(() => {
-                fallback.classList.remove("hidden");
-                fallback.classList.add("flex");
+                if (typeof fallback.showModal === "function") {
+                    fallback.showModal();
+                }
             }, 1400);
 
             continueWebBtn.addEventListener("click", () => {
                 window.clearTimeout(fallbackTimer);
-                fallback.classList.add("hidden");
-                fallback.classList.remove("flex");
+                fallback.close();
             });
         })();
     </script>
