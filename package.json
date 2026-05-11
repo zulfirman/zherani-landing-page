@@ -1,0 +1,49 @@
+{
+  "name": "my-qwik-empty-starter",
+  "description": "Blank project with routing included",
+  "engines": {
+    "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
+  },
+  "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.types": "tsc --incremental --noEmit",
+    "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
+    "dev": "vite --mode ssr",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "preview": "qwik build preview && vite preview --open",
+    "start": "vite --open --mode ssr",
+    "qwik": "qwik"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "^1.19.2",
+    "@builder.io/qwik-city": "^1.19.2",
+    "@eslint/js": "^10",
+    "@tailwindcss/vite": "^4.2.4",
+    "@types/aos": "^3.0.7",
+    "@types/node": "25.6.2",
+    "daisyui": "^5.5.19",
+    "eslint": "10.3.0",
+    "eslint-plugin-qwik": "^1.19.2",
+    "globals": "17.6.0",
+    "prettier": "3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "tailwindcss": "^4.2.4",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.59.2",
+    "typescript-plugin-css-modules": "latest",
+    "undici": "*",
+    "vite": "8.0.11"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "swiper": "^12.1.4"
+  }
+}

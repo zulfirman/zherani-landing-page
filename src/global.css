@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@plugin "../node_modules/daisyui/index.js" {
+    themes: cupcake --default, night --prefersdark;
+}
+
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root:has(input.theme-controller[value=cupcake]:checked), [data-theme=cupcake] {
+    --color-primary: oklch(72.3% .138 181.071);
+}
+
+body,
+html {
+  scroll-behavior: smooth !important;
+  overflow-x: hidden;
+}
+
+[data-theme="cupcake"] .alert-info,
+[data-theme="cupcake"] .success,
+[data-theme="cupcake"] .alert-error,
+[data-theme="cupcake"] .alert-success,
+[data-theme="cupcake"] .btn-info:not(.btn-outline),
+[data-theme="cupcake"] .btn-success:not(.btn-outline),
+[data-theme="cupcake"] .btn-warning:not(.btn-outline),
+[data-theme="cupcake"] .btn-error:not(.btn-outline),
+[data-theme="cupcake"] .btn-primary:not(.btn-outline),
+[data-theme="cupcake"] .badge-info,
+[data-theme="cupcake"] .badge-success,
+[data-theme="cupcake"] .badge-warning,
+[data-theme="cupcake"] .badge-error {
+    color: #F1F5F9;
+}
+
