@@ -46,7 +46,7 @@ export default component$(() => {
   const isExpired = workspace.value?.error === "EXPIRED";
 
   const openAppUrl = token
-    ? `https://zherani.my.id/app/workspaces/join/?token=${encodeURIComponent(token)}`
+    ? 'zherani://'+`/app/workspaces/join/?token=${encodeURIComponent(token)}`
     : "https://zherani.my.id/app/workspaces/join/";
   const webAppUrl = token
     ? `https://app.zherani.my.id/app/workspaces/join/?token=${encodeURIComponent(token)}`
