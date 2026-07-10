@@ -31,7 +31,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Zherani: Smart Expense Tracker",
+  title: "Zherani: Shared Money Manager",
   meta: [
     {
       name: "description",
@@ -49,7 +49,7 @@ export const head: DocumentHead = {
     },
     {
       property: "og:title",
-      content: "Zherani: Smart Expense Tracker",
+      content: "Zherani: Shared Money Manager",
     },
     {
       property: "og:description",
@@ -62,7 +62,7 @@ export const head: DocumentHead = {
     },
     {
       property: "og:image",
-      content: "/imgs/logo.png",
+      content: "/imgs/logo.webp",
     },
     {
       name: "twitter:card",
@@ -70,7 +70,7 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:title",
-      content: "Zherani: Smart Expense Tracker",
+      content: "Zherani: Shared Money Manager",
     },
     {
       name: "twitter:description",

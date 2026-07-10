@@ -9,7 +9,7 @@ Migrated from a static HTML/Tailwind site to **Qwik** for ultimate performance a
 
 ## Project Overview
 
-Zherani is a smart expense tracker landing page. This version is built with Qwik and Tailwind CSS v4, featuring:
+Zherani is a Shared Money Manager landing page. This version is built with Qwik and Tailwind CSS v4, featuring:
 
 - **Instant Loading**: Powered by Qwik's resumability.
 - **Modern UI**: Tailwind CSS v4 for styling.

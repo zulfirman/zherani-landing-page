@@ -57,7 +57,7 @@ export default component$(() => {
       <section class="w-full rounded-2xl bg-white p-6 shadow-lg sm:p-8">
         <Link href="/" class="flex items-center gap-3">
           <img
-            src="/imgs/logo.png"
+            src="/imgs/logo.webp"
             alt="Zherani logo"
             class="h-10 w-10 rounded-lg object-cover"
           />
@@ -212,7 +212,7 @@ export const head: DocumentHead = ({ resolveValue }) => {
         },
         {
           property: "og:image",
-          content: "https://zherani.my.id/imgs/logo.png",
+          content: "https://zherani.my.id/imgs/logo.webp",
         },
       ],
     };
@@ -241,7 +241,7 @@ export const head: DocumentHead = ({ resolveValue }) => {
       },
       {
         property: "og:image",
-        content: "https://zherani.my.id/imgs/logo.png",
+        content: "https://zherani.my.id/imgs/logo.webp",
       },
       {
         property: "og:type",
@@ -261,7 +261,7 @@ export const head: DocumentHead = ({ resolveValue }) => {
       },
       {
         name: "twitter:image",
-        content: "https://zherani.my.id/imgs/logo.png",
+        content: "https://zherani.my.id/imgs/logo.webp",
       },
     ],
   };

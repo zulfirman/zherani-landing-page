@@ -8,7 +8,7 @@ export const Header = component$(() => {
           {/* Logo */}
           <a href="/" class="flex items-center gap-3 shrink-0">
             <img
-              src="/imgs/logo.png"
+              src="/imgs/logo.webp"
               alt="Zherani Logo"
               class="h-10 w-auto sm:h-12"
             />
