@@ -1,0 +1,47 @@
+What makes Zherani Shared Money Manager unique?
+Most expense trackers focus on recording past spending. Zherani focuses on helping users stay within budget before adding new expenses. With shared workspaces, budgets, multiple accounts, and customizable categories, it's designed for couples, families, roommates, and friends who want to manage money together with better visibility and control.
+
+Why should a person choose Zherani Shared Money Manager over its competitors?
+Zherani is built to make budgeting simple, collaborative, and practical. Instead of overwhelming users with complex financial tools, it focuses on the features people actually need to manage money together.
+
+Shared workspaces for couples, families, roommates, and friends.
+Budget tracking to help you stay within your spending limits.
+Multiple accounts to organize cash, bank accounts, e-wallets, and more.
+Customizable categories that fit your personal spending habits.
+Simple and intuitive interface that's easy to use every day.
+Whether you're managing your own finances or sharing expenses with others, Zherani provides better visibility and control without unnecessary complexity.
+
+Edit
+How would you describe the primary audience of Zherani Shared Money Manager?
+Zherani is designed for anyone who wants a simple way to manage money, whether individually or with others. It's especially useful for people who need better visibility into their finances and want to stay within budget.
+
+Couples managing shared expenses and household budgets.
+Families tracking income and daily spending together.
+Roommates splitting rent, utilities, and other shared costs.
+Friends organizing expenses for trips, events, or shared activities.
+Individuals looking for an easy way to track expenses, manage budgets, and build better financial habits.
+Whether you're managing your own finances or sharing them with others, Zherani helps you stay organized and in control.
+
+What's the story behind Zherani Shared Money Manager?
+Zherani was created from a simple observation: most expense trackers only tell you what you've already spent. We wanted to build an app that helps people stay aware of their budget before recording new expenses.
+
+Managing money with a partner, family, roommates, or even by yourself can quickly become complicated when expenses, accounts, and budgets are scattered across different places. We built Zherani to make shared money management simple, organized, and accessible.
+
+By combining shared workspaces, budget tracking, multiple accounts, and customizable categories in an intuitive interface, Zherani helps people gain better visibility and control over their finances without unnecessary complexity.
+
+Which are the primary technologies used for building Zherani Shared Money Manager?
+Zherani is built with a modern, performance-focused technology stack to deliver a fast, reliable, and cross-platform experience.
+
+Golang — Powers the backend API with high performance and efficient concurrency.
+SvelteKit — Builds the responsive frontend and Progressive Web App (PWA).
+PostgreSQL — Stores financial data securely with a robust relational database.
+Redis — Improves performance through caching and session management.
+Tauri — Enables lightweight desktop applications for Windows, macOS, and Linux using the same web-based codebase.
+This stack allows Zherani to remain fast, scalable, and easy to maintain while providing a smooth experience across web and desktop platforms.
+
+Who are some of the biggest customers of Zherani Shared Money Manager?
+Please list each one starting with a dash on a new line.
+
+Zherani is currently used by early adopters, including individuals, couples, families, roommates, and friends who want a simple way to manage shared finances.
+
+As a growing product, we're focused on listening to user feedback and continuously improving the experience. Our goal is to build a money management app that is simple, collaborative, and accessible for everyone.

@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { GlobeIcon, GooglePlayIcon } from "../icons/icons";
 
 const FOOTER_BADGES = [
   {
@@ -15,78 +16,76 @@ const FOOTER_BADGES = [
 
 export const Footer = component$(() => {
   return (
-    <footer class="bg-[#f1f1f1]">
-      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-7 sm:py-10">
-        <div class="flex flex-col gap-6 lg:gap-8">
-          <div class="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <nav class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-gray-700 lg:justify-start lg:max-w-md xl:max-w-none">
-              <a href="#hero" class="text-primary hover:underline">
-                Home
-              </a>
-              <a href="#why" class="text-primary hover:underline">
-                Why Zherani
-              </a>
-              <a href="#features" class="text-primary hover:underline">
-                Features
-              </a>
-              <a href="#FAQ" class="text-primary hover:underline">
-                FAQ
-              </a>
-              <a href="#testimonials" class="text-primary hover:underline">
-                Testimonials
-              </a>
-            </nav>
+    <footer class="footer footer-horizontal footer-center bg-base-200 p-10 text-base-content">
+      <nav class="grid grid-flow-col gap-4">
+        <a href="#hero" class="link link-hover">
+          Home
+        </a>
+        <a href="#how-it-works" class="link link-hover">
+          How it works
+        </a>
+        <a href="#features" class="link link-hover">
+          Features
+        </a>
+        <a href="#screenshots" class="link link-hover">
+          Screenshots
+        </a>
+        <a href="#FAQ" class="link link-hover">
+          FAQ
+        </a>
+      </nav>
 
-            <div class="flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-end">
-              <div class="grid w-full max-w-xs grid-cols-2 gap-2 sm:flex sm:w-auto sm:max-w-none">
-                <a href="#" class="hidden" aria-hidden="true" tabIndex={-1}>
-                  <span>App Store</span>
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.airshade.zherani"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-primary btn-sm w-full sm:w-auto"
-                >
-                  <i class="bi bi-google-play text-lg"></i>
-                  <span>Play Store</span>
-                </a>
-                <a
-                  href="https://app.zherani.my.id"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-primary btn-sm w-full sm:w-auto"
-                >
-                  <i class="bi bi-globe2 text-lg"></i>
-                  <span>Browser</span>
-                </a>
-              </div>
+      <nav class="flex flex-wrap items-center justify-center gap-2">
+        <a
+          href="https://play.google.com/store/apps/details?id=com.airshade.zherani"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary btn-sm gap-2"
+        >
+          <GooglePlayIcon />
+          <span>Play Store</span>
+        </a>
+        <a href="#" class="hidden" aria-hidden="true" tabIndex={-1}>
+          <span>App Store</span>
+        </a>
+        <a
+          href="https://app.zherani.my.id"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline btn-sm gap-2"
+        >
+          <GlobeIcon />
+          <span>Browser</span>
+        </a>
+      </nav>
 
-              <div class="flex max-w-full flex-wrap items-center justify-center gap-2 sm:gap-3 lg:justify-end">
-                {FOOTER_BADGES.map((badge) => (
-                  <a
-                    key={badge.href}
-                    href={badge.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex shrink-0 items-center"
-                  >
-                    <img
-                      src={badge.src}
-                      alt={badge.alt}
-                      class="h-8 w-auto max-w-[140px] object-contain sm:h-10 sm:max-w-[160px]"
-                    />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
+      <nav class="flex flex-wrap items-center justify-center gap-3">
+        {FOOTER_BADGES.map((badge) => (
+          <a
+            key={badge.href}
+            href={badge.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex shrink-0 items-center"
+          >
+            <img
+              src={badge.src}
+              alt={badge.alt}
+              width={160}
+              height={40}
+              loading="lazy"
+              decoding="async"
+              class="h-8 w-auto max-w-[140px] object-contain sm:h-10 sm:max-w-[160px]"
+            />
+          </a>
+        ))}
+      </nav>
 
-          <p class="text-center text-sm text-gray-700 lg:text-left">
-            © Copyright {new Date().getFullYear()} Zherani. All Rights Reserved.
-          </p>
-        </div>
-      </div>
+      <aside>
+        <p class="text-sm text-base-content/70">
+          © Copyright {new Date().getFullYear()} Zherani. All Rights Reserved.
+        </p>
+      </aside>
     </footer>
   );
 });

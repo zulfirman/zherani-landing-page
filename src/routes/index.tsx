@@ -1,29 +1,29 @@
-import { component$, useVisibleTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import AOS from "aos";
 import { Header } from "../components/header/header";
 import { Hero } from "../components/hero/hero";
-import { Why } from "../components/why/why";
+import { Stats } from "../components/stats/stats";
+import { HowItWorks } from "../components/how-it-works/how-it-works";
 import { Features } from "../components/features/features";
+import { Screenshots } from "../components/screenshots/screenshots";
 import { FAQ } from "../components/faq/faq";
 import { Testimonials } from "../components/testimonials/testimonials";
+import { DownloadCta } from "../components/download-cta/download-cta";
 import { Footer } from "../components/footer/footer";
 
 export default component$(() => {
-  // eslint-disable-next-line qwik/no-use-visible-task
-  useVisibleTask$(() => {
-    AOS.init();
-  });
-
   return (
     <>
       <Header />
       <main>
         <Hero />
-        <Why />
+        <Stats />
+        <HowItWorks />
         <Features />
+        <Screenshots />
         <FAQ />
         <Testimonials />
+        <DownloadCta />
       </main>
       <Footer />
     </>
@@ -36,16 +36,20 @@ export const head: DocumentHead = {
     {
       name: "description",
       content:
-        "Zherani helps you track expenses, incomes, accounts, budgets, categories and insights across workspaces with multi-currency support.",
+        "Zherani is a shared money manager for individuals, couples, families, roommates, and friends. Collaborate in real time, stay within budget before you spend, and organize personal, family, and business money.",
     },
     {
       name: "keywords",
       content:
-        "expense tracker, budget planner, income tracking, multi-currency, accounts, categories, workspace sharing",
+        "shared money manager, expense tracker, family budget, couples budget, roommate expenses, workspace sharing, budget planner",
     },
     {
       name: "robots",
       content: "index, follow",
+    },
+    {
+      name: "theme-color",
+      content: "#7dd3c0",
     },
     {
       property: "og:title",
@@ -54,7 +58,7 @@ export const head: DocumentHead = {
     {
       property: "og:description",
       content:
-        "Track expenses and incomes, plan monthly budgets, manage accounts, and get insights.",
+        "Complete control and seamless collaboration — share workspaces, track expenses together, and stay aligned on budgets.",
     },
     {
       property: "og:type",
@@ -75,7 +79,21 @@ export const head: DocumentHead = {
     {
       name: "twitter:description",
       content:
-        "Track expenses and incomes, plan monthly budgets, manage accounts, and get insights.",
+        "Shared money manager for couples, families, roommates, and friends. Stay within budget before you spend.",
+    },
+  ],
+  links: [
+    {
+      rel: "preload",
+      href: "/imgs/logo.webp",
+      as: "image",
+      type: "image/webp",
+    },
+    {
+      rel: "preload",
+      href: "/imgs/screenshots/hero.webp",
+      as: "image",
+      type: "image/jpeg",
     },
   ],
 };

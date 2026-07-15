@@ -1,80 +1,66 @@
 import { component$ } from "@builder.io/qwik";
 
-export const FAQ = component$(() => {
-  const faqs = [
-    {
-      question: "What is Zherani?",
-      answer:
-        "Zherani is an expenses & income tracker that lets you record entries with categories, accounts, dates and notes, plan monthly budgets and explore insights across workspaces.",
-    },
-    {
-      question: "Does Zherani support multiple currencies?",
-      answer:
-        "Yes. Workspaces can use IDR, USD, EUR or JPY with consistent calculations.",
-    },
-    {
-      question: "Can I share a workspace?",
-      answer:
-        "Yes. Share with email invitations or shareable links to collaborate.",
-    },
-    {
-      question: "Is there a calendar and search?",
-      answer:
-        "Zherani includes a calendar with monthly totals, detailed date views and powerful search and filters.",
-    },
-    {
-      question: "Is there authentication?",
-      answer:
-        "Yes. Signup, login, password change and profile management are supported.",
-    },
-    {
-      question: "Can I set budgets and templates?",
-      answer:
-        "Yes. Set monthly budgets per category with progress indicators. Create templates and quick amounts for recurring entries.",
-    },
-    {
-      question: "How is my data handled?",
-      answer:
-        "Workspaces are isolated. You control sharing via invitations or links. Export options will be available for your records.",
-    },
-  ];
+const FAQS = [
+  {
+    question: "What is Zherani?",
+    answer:
+      "Zherani is a shared money manager built for individuals, couples, families, roommates, and friends who want complete control and seamless collaboration. It helps you stay within budget before adding new expenses — not just review past spending.",
+  },
+  {
+    question: "Who is Zherani for?",
+    answer:
+      "Anyone who wants a simple way to manage money — alone or with others. It’s especially useful for couples managing shared expenses, families tracking income and spending together, roommates splitting rent and utilities, friends organizing trip or event costs, and individuals building better financial habits.",
+  },
+  {
+    question: "Can I share a workspace with others?",
+    answer:
+      "Yes. Invite family members, partners, or friends to join your workspaces. Track expenses collaboratively in real time, see who spent what and when, and stay aligned on budgets and goals.",
+  },
+  {
+    question: "Can I separate personal and shared money?",
+    answer:
+      "Yes. With multi-workspace, you can organize personal expenses, a family shared budget, and business or freelance cash flow — each with better visibility and control.",
+  },
+  {
+    question: "What smart features are included?",
+    answer:
+      "Fast expense and income entry, multi-account management (cash, bank, e-wallets), smart budgets with alerts, recurring transactions and bills, shared workspaces, customizable categories, and beautiful reports and insights.",
+  },
+  {
+    question: "How is my data handled?",
+    answer:
+      "Privacy-first design — your data stays secure. Workspaces are isolated, you control sharing via invitations or links, data is encrypted in transit, and you can request that data be deleted.",
+  },
+] as const;
 
+export const FAQ = component$(() => {
   return (
-    <section id="FAQ" class="bg-[#f1f1f1]">
-      <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-20">
-        <div class="flex items-center">
-          <h2 class="text-2xl font-bold lg:text-5xl pb-8">
-            <span class="text-primary">Frequently</span> Asked Questions
+    <section id="FAQ" class="bg-base-100">
+      <div class="mx-auto max-w-screen-md px-4 py-20 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Frequently asked questions
           </h2>
+          <p class="mt-4 text-lg text-base-content/70">
+            Need to know how Zherani works? Start here.
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div class="space-y-4">
-            {faqs.map((faq, index) => (
-              <details
-                key={index}
-                class="group bg-white rounded-lg shadow p-4"
-                data-aos="fade-up"
-              >
-                <summary class="flex justify-between items-center cursor-pointer">
-                  <span class="font-semibold text-gray-900">
-                    {faq.question}
-                  </span>
-                  <i class="bi bi-chevron-down transition-transform group-open:rotate-180"></i>
-                </summary>
-                <div class="mt-3 text-gray-700">{faq.answer}</div>
-              </details>
-            ))}
-          </div>
-          <div class="flex justify-center md:justify-end lg:justify-center items-start">
-            <img
-              src="/imgs/device-pic-2.webp"
-              alt="Zherani app on a device"
-              class="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[420px] h-auto object-contain"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
+        <div class="mt-12 space-y-3">
+          {FAQS.map((faq) => (
+            <div
+              key={faq.question}
+              class="collapse-arrow collapse border border-base-300 bg-base-100"
+            >
+              <input type="radio" name="zherani-faq" />
+              <div class="collapse-title font-semibold text-base-content">
+                {faq.question}
+              </div>
+              <div class="collapse-content text-base-content/70">
+                <p>{faq.answer}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

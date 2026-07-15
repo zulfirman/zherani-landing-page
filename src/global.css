@@ -4,7 +4,7 @@
 }
 
 :root {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
 :root:has(input.theme-controller[value=cupcake]:checked), [data-theme=cupcake] {
@@ -13,8 +13,19 @@
 
 body,
 html {
-  scroll-behavior: smooth !important;
+  scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+main > section:not(#hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 [data-theme="cupcake"] .alert-info,
@@ -32,4 +43,3 @@ html {
 [data-theme="cupcake"] .badge-error {
     color: #F1F5F9;
 }
-

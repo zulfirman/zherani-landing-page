@@ -15,19 +15,16 @@ export const RouterHead = component$(() => {
       <link rel="canonical" href={loc.url.href} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/x-icon" href="/imgs/logo.ico" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-        rel="stylesheet"
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="anonymous"
       />
       <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
       />
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-      />
-      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
       <script
         type="application/ld+json"
@@ -43,7 +40,7 @@ export const RouterHead = component$(() => {
             priceCurrency: "USD",
           },
           description:
-            "Expenses & income tracker with categories, accounts, budgets, insights, multi-currency and workspace sharing.",
+            "Zherani is a shared money manager built for individuals, couples, families, roommates, and friends who want complete control and seamless collaboration.",
         })}
       />
 
