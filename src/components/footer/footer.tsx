@@ -1,5 +1,18 @@
 import { component$ } from "@builder.io/qwik";
 
+const FOOTER_BADGES = [
+  {
+    href: "https://fazier.com/launches/zherani.my.id",
+    src: "https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=neutral",
+    alt: "Fazier badge",
+  },
+  {
+    href: "https://www.uneed.best/tool/zherani",
+    src: "https://www.uneed.best/EMBED3.png",
+    alt: "Uneed Embed Badge",
+  },
+] as const;
+
 export const Footer = component$(() => {
   return (
     <footer class="bg-[#f1f1f1]">
@@ -49,20 +62,23 @@ export const Footer = component$(() => {
                 </a>
               </div>
 
-              <a
-                href="https://fazier.com/launches/zherani.my.id"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex shrink-0 items-center"
-              >
-                <img
-                  src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=neutral"
-                  width={120}
-                  height={40}
-                  alt="Fazier badge"
-                  class="h-8 w-auto sm:h-10"
-                />
-              </a>
+              <div class="flex max-w-full flex-wrap items-center justify-center gap-2 sm:gap-3 lg:justify-end">
+                {FOOTER_BADGES.map((badge) => (
+                  <a
+                    key={badge.href}
+                    href={badge.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex shrink-0 items-center"
+                  >
+                    <img
+                      src={badge.src}
+                      alt={badge.alt}
+                      class="h-8 w-auto max-w-[140px] object-contain sm:h-10 sm:max-w-[160px]"
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
