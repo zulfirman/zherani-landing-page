@@ -61,7 +61,7 @@ export const DownloadCta = component$(() => {
               aria-hidden="true"
             ></div>
             <PhoneShot
-              src="/imgs/screenshots/download-cta.webp"
+              src="/imgs/screenshots/hero.webp"
               alt="Zherani app on a phone"
               class="relative z-10 mb-[-3rem] w-[240px] sm:w-[260px] lg:mb-[-4rem] lg:w-[280px] shadow-2xl ring-primary-content/20"
             />
