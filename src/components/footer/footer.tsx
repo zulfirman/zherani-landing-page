@@ -9,7 +9,7 @@ const FOOTER_BADGES = [
   },
   {
     href: "https://www.uneed.best/tool/zherani",
-    src: "https://www.uneed.best/EMBED3.png",
+    src: "/imgs/uneed-logo.webp",
     alt: "Uneed Embed Badge",
   },
 ] as const;

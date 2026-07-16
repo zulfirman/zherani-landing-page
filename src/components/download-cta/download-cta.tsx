@@ -19,8 +19,8 @@ export const DownloadCta = component$(() => {
           aria-hidden="true"
         ></div>
 
-        <div class="relative z-10 flex flex-col items-center gap-10 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
-          <div class="max-w-lg py-16 text-center lg:py-20 lg:pb-24 lg:text-left">
+        <div class="relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-12 lg:flex-row lg:items-end lg:justify-center lg:gap-25">
+          <div class="max-w-xl py-16 text-center lg:py-20 lg:pb-24 lg:text-left">
             <h2 class="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
               Download Zherani
             </h2>
@@ -55,7 +55,7 @@ export const DownloadCta = component$(() => {
             </p>
           </div>
 
-          <div class="relative flex w-full justify-center lg:w-auto lg:justify-end">
+          <div class="relative flex justify-center lg:justify-end">
             <div
               class="pointer-events-none absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary-content/10 lg:left-auto lg:right-8 lg:translate-x-0"
               aria-hidden="true"

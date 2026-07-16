@@ -107,14 +107,14 @@ export const Features = component$(() => {
               <div
                 key={feature.title}
                 class={[
-                  "flex flex-col items-center gap-10 lg:gap-16",
+                  "mx-auto flex max-w-7xl flex-col items-center gap-12 lg:justify-center lg:gap-20",
                   reverse ? "lg:flex-row-reverse" : "lg:flex-row",
                 ]}
               >
                 <div class="flex shrink-0 justify-center">
                   <PhoneShot src={feature.src} alt={feature.alt} />
                 </div>
-                <div class="w-full max-w-xl text-center lg:text-left">
+                <div class="max-w-xl text-center lg:text-left">
                   <h3 class="text-2xl font-bold sm:text-3xl">
                     {feature.title}
                   </h3>
