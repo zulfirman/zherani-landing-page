@@ -13,8 +13,8 @@ const FOOTER_BADGES = [
         alt: "Uneed Embed Badge",
     },
     {
-        href: "https://www.launchpact.io/p/zherani-shared-money-manager",
-        src: "https://www.launchpact.io/badge/zherani-shared-money-manager.png",
+        href: "https://www.launchpact.io/p/zherani",
+        src: "https://www.launchpact.io/badge/zherani.png",
         alt: "Listed on LaunchPact",
     },
     {
