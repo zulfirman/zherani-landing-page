@@ -2,16 +2,26 @@ import { component$ } from "@builder.io/qwik";
 import { GlobeIcon, GooglePlayIcon } from "../icons/icons";
 
 const FOOTER_BADGES = [
-  {
-    href: "https://fazier.com/launches/zherani.my.id",
-    src: "https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=neutral",
-    alt: "Fazier badge",
-  },
-  {
-    href: "https://www.uneed.best/tool/zherani",
-    src: "/imgs/uneed-logo.webp",
-    alt: "Uneed Embed Badge",
-  },
+    {
+        href: "https://fazier.com/launches/zherani.my.id",
+        src: "https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=neutral",
+        alt: "Fazier badge",
+    },
+    {
+        href: "https://www.uneed.best/tool/zherani",
+        src: "/imgs/uneed-logo.webp",
+        alt: "Uneed Embed Badge",
+    },
+    {
+        href: "https://www.launchpact.io/p/zherani-shared-money-manager",
+        src: "https://www.launchpact.io/badge/zherani-shared-money-manager.png",
+        alt: "Listed on LaunchPact",
+    },
+    {
+        href: "https://www.producthunt.com/products/zherani-shared-money-manager/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-zherani&#0045;shared&#0045;money&#0045;manager",
+        src: "https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1260438&theme=light",
+        alt: "Zherani&#0058;&#0032;Shared&#0032;Money&#0032;Manager - Managing&#0032;money&#0032;together&#0032;made&#0032;simple | Product Hunt",
+    },
 ] as const;
 
 export const Footer = component$(() => {
